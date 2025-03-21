@@ -1,0 +1,254 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Pradipta Deb" description="Portfolio and personal blog of Pradipta Deb">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Research Engineer at Hornetsecurity, Vice Chair of M3AAWG's AI Committee, specializing in privacy-preserving AI and large-scale ML systems."
+			>
+				<img
+					width="400"
+					height="400"
+					src="/assets/at-work.jpg"
+					alt="Pradipta Deb at work"
+					class="profile-image"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content" style="text-align: justify;">
+					<p>
+						I am a Research Engineer specializing in privacy-preserving AI and large-scale machine learning systems, with over ten years of experience. I have built commercial ML systems handling 6B+ daily interactions, focusing on computer vision, NLP, and security.
+					</p>
+
+					<p>
+						As Vice Chair of M3AAWG's AI Committee, I work on international standards development for AI in cybersecurity. My research spans optimization, speech synthesis, and privacy-preserving ML. I thrive on new challenges and learn rapidly from peers.</p>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="section-title">Research Interests</h2>
+				<div class="content">
+					<ul>
+						<li>Privacy-Preserving Machine Learning & Federated Learning</li>
+						<li>Large Language Models & Natural Language Processing</li>
+						<li>Computer Vision & Multi-modal AI Systems</li>
+						<li>Secure ML Pipeline Design & GDPR Compliance</li>
+						<li>Ethical AI Development & Responsible Innovation</li>
+					</ul>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<div class="education-item">
+						<h3>MS in Computer Science</h3>
+						<p class="institution">
+							<a href="https://saarland-informatics-campus.de/en/" target="_blank" rel="noopener noreferrer">
+								Saarland University
+							</a>
+							, Germany (July, 2019)
+						</p>
+					</div>
+
+					<div class="education-item">
+						<h3>BTech in Information Technology</h3>
+						<p class="institution">
+							<a href="https://makautwb.ac.in/" target="_blank" rel="noopener noreferrer">
+								West Bengal University of Technology
+							</a>
+							, India (July, 2012)
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="section-title">Publications</h2>
+				<div class="content">
+					<ul class="publications-list">
+						<li>
+							<a href="https://www.dfki.de/fileadmin/user_upload/import/10021_blizzard.pdf" target="_blank" rel="noopener noreferrer">
+								Le Maguer, S., Steiner, I., Tombini, F., Deb, P., Basu, M., & Kröger, I. (2018). Agile MaryTTS Architecture for the Blizzard Challenge 2018
+							</a>
+						</li>
+						<li>
+							<a href="http://www.intjit.org/cms/journal/volume/20/1/201_2.pdf" target="_blank" rel="noopener noreferrer">
+								Basu, M., Deb, P., & Garai, G. (2014). Hybrid of Particle Swarm Optimization and Simulated Annealing for Multidimensional Function Optimization
+							</a>
+						</li>
+						<li>
+							<a href="http://www.intjit.org/cms/journal/volume/20/1/201_1.pdf" target="_blank" rel="noopener noreferrer">
+								Deb, P., & Basu, M. (2014). Next Generation Sequencing Using Ant Colony Optimization Algorithm and Binary Particle Swarm Optimizers
+							</a>
+						</li>
+						<li>
+							<a href="https://ieeexplore.ieee.org/abstract/document/6710519" target="_blank" rel="noopener noreferrer">
+								Banerjee, C., Kundu, A., Basu, M., Deb, P., Nag, D., & Dattagupta, R. (2013). A Service Based Trust Management Classifier Approach for Cloud Security
+							</a>
+						</li>
+						<li>
+							<a href="http://www.iaeme.com/MasterAdmin/Journal_uploads/IJCET/VOLUME_4_ISSUE_4/IJCET_04_04_051.pdf" target="_blank" rel="noopener noreferrer">
+								Deb, P., & Basu, M. (2013). An Analogy of Algorithms for Tagging of Single Nucleotide Polymorphism and Evaluation Through Linkage Disequilibrium
+							</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		width: 400px;
+		height: 400px;
+		border-radius: 50%;
+		object-fit: cover;
+		margin: 2rem auto;
+		display: block;
+		box-shadow: var(--shadow-md);
+	}
+
+	:global(.hero img) {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content p {
+		margin-bottom: 2rem;
+	}
+
+	.content p:last-child {
+		margin-bottom: 0;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+
+	.education-item {
+		margin-bottom: 2rem;
+	}
+
+	.education-item:last-child {
+		margin-bottom: 0;
+	}
+
+	.education-item h3 {
+		color: var(--gray-0);
+		font-size: var(--text-lg);
+		margin-bottom: 0.5rem;
+	}
+
+	.institution {
+		color: var(--accent-regular);
+		font-size: var(--text-md);
+	}
+
+	.institution a {
+		color: var(--accent-regular);
+		text-decoration: none;
+	}
+
+	.institution a:hover {
+		text-decoration: underline;
+	}
+
+	.publications-list {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.publications-list li {
+		margin-bottom: 1.5rem;
+	}
+
+	.publications-list li:last-child {
+		margin-bottom: 0;
+	}
+
+	.publications-list a {
+		color: var(--gray-300);
+		text-decoration: none;
+		transition: color 0.2s ease;
+		line-height: 1.6;
+	}
+
+	.publications-list a:hover {
+		color: var(--accent-regular);
+	}
+
+	.profile-image {
+		width: 400px;
+		height: 400px;
+		border-radius: 50%;
+		object-fit: cover;
+		margin: 2rem auto;
+		box-shadow: var(--shadow-md);
+	}
+
+	@media (max-width: 50em) {
+		img {
+			width: 300px;
+			height: 300px;
+		}
+	}
+</style>

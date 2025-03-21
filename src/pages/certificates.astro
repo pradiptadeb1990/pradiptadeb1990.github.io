@@ -1,0 +1,249 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Certificate from '../components/Certificate.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+
+const certificates = [
+    {
+        name: "DeepLearning.AI TensorFlow Developer (Professional Certificate)",
+        logo: "images/certificates/dlai.png",
+        timeline: "2021",
+        url: "https://www.coursera.org/account/accomplishments/specialization/certificate/NR9DFKCRL838",
+        summary: "Comprehensive certification in building and deploying deep learning models with TensorFlow. Covers neural networks, CNNs, NLP, and time series forecasting. Includes hands-on projects in computer vision and natural language processing.",
+        tags: ["DL", "AI", "NLP", "CV"]
+    },
+    {
+        name: "Advanced Time Series Analysis",
+        logo: "images/certificates/dlai.png",
+        timeline: "2021",
+        url: "https://www.coursera.org/account/accomplishments/certificate/MN5DY5QBRPWH",
+        summary: "Advanced training in time series forecasting using deep learning. Covers RNNs, 1D CNNs, and hybrid models for sequence prediction. Includes real-world applications in financial and scientific forecasting.",
+        tags: ["DL", "AI", "Time Series"]
+    },
+    {
+        name: "Natural Language Processing with Deep Learning",
+        logo: "images/certificates/dlai.png",
+        timeline: "2021",
+        url: "https://www.coursera.org/account/accomplishments/certificate/XYXVCY6W5B82",
+        summary: "Specialized certification in modern NLP techniques. Covers transformers, BERT, sequence models, and text generation. Includes practical experience with sentiment analysis and language modeling.",
+        tags: ["DL", "AI", "NLP"]
+    },
+    {
+        name: "Computer Vision and Deep Learning",
+        logo: "images/certificates/dlai.png",
+        timeline: "2021",
+        url: "https://www.coursera.org/account/accomplishments/certificate/X4D9FHTTMHKR",
+        summary: "Advanced certification in computer vision applications. Covers CNN architectures, transfer learning, object detection, and image segmentation. Includes hands-on projects with real-world datasets.",
+        tags: ["DL", "AI", "CV"]
+    },
+    {
+        name: "TensorFlow Development Fundamentals",
+        logo: "images/certificates/dlai.png",
+        timeline: "2021",
+        url: "https://www.coursera.org/account/accomplishments/certificate/GSQ84AUHR9L5",
+        summary: "Comprehensive training in TensorFlow development. Covers neural network design, model optimization, and deployment strategies. Includes practical implementation of computer vision and NLP models.",
+        tags: ["DL", "AI"]
+    },
+    {
+        name: "AI For Medicine Specialization",
+        logo: "images/certificates/dlai.png",
+        timeline: "2020",
+        url: "https://www.coursera.org/account/accomplishments/specialization/certificate/W4U9SR5FGENC",
+        summary: "Specialized certification in applying AI to medical diagnosis, prognosis, and treatment. Covers medical image analysis, risk modeling, and NLP for medical records. Includes practical experience with real-world medical datasets.",
+        tags: ["ML", "DL", "Medicine", "CV", "NLP"]
+    },
+    {
+        name: "AI in Healthcare - Diagnosis",
+        logo: "images/certificates/dlai.png",
+        timeline: "2020",
+        url: "https://www.coursera.org/account/accomplishments/certificate/9PFKNFERDCG8",
+        summary: "Specialized training in medical image analysis using deep learning. Covers lung and brain disorder diagnosis using CNNs and advanced segmentation techniques.",
+        tags: ["AI", "DL", "Medicine", "CV"]
+    },
+    {
+        name: "AI in Healthcare - Prognosis",
+        logo: "images/certificates/dlai.png",
+        timeline: "2020",
+        url: "https://www.coursera.org/account/accomplishments/certificate/672XLHP7XNPN",
+        summary: "Advanced training in medical prognosis using ML. Covers survival analysis, risk modeling, and predictive analytics for patient outcomes.",
+        tags: ["AI", "DL", "Medicine", "AI"]
+    },
+    {
+        name: "AI in Healthcare - Treatment",
+        logo: "images/certificates/dlai.png",
+        timeline: "2020",
+        url: "https://www.coursera.org/account/accomplishments/certificate/B72RJ3HLA73S",
+        summary: "Specialized certification in AI-driven treatment planning. Covers treatment effect prediction, model interpretation, and NLP for medical records analysis.",
+        tags: ["AI", "DL", "Medicine", "NLP"]
+    },
+    {
+        name: "Mathematics for Machine Learning Specialization",
+        logo: "images/certificates/coursera.png",
+        timeline: "2019",
+        url: "https://www.coursera.org/account/accomplishments/specialization/certificate/2NSYSAPRFCSG",
+        summary: "Advanced certification in mathematical foundations of machine learning. Covers linear algebra, calculus, and PCA with practical applications in neural networks, page rank algorithms, and dimensionality reduction.",
+        tags: ["ML", "Math"]
+    },
+    {
+        name: "Deep Learning Specialization",
+        logo: "images/certificates/dlai.png",
+        timeline: "2018",
+        url: "https://www.coursera.org/account/accomplishments/specialization/certificate/L6ZU4YDAETZR",
+        summary: "Comprehensive specialization in deep learning fundamentals and applications. Covers neural networks, optimization algorithms, CNN architectures, sequence models, and practical aspects of ML projects.",
+        tags: ["DL", "ML", "AI", "CV", "NLP"]
+    },
+    {
+        name: "Neural Networks and Deep Learning",
+        logo: "images/certificates/dlai.png",
+        timeline: "2018",
+        url: "https://www.coursera.org/account/accomplishments/certificate/GSBPNUJEAM4Y",
+        summary: "Foundational certification in neural network architectures and deep learning. Covers network design, vectorized implementation, and hyperparameter optimization.",
+        tags: ["DL", "Neural Networks"]
+    },
+    {
+        name: "Advanced Deep Learning Optimization",
+        logo: "images/certificates/dlai.png",
+        timeline: "2018",
+        url: "https://www.coursera.org/account/accomplishments/certificate/TPDAUW3E8V6M",
+        summary: "Advanced training in deep learning optimization techniques. Covers hyperparameter tuning, regularization strategies, and model performance optimization.",
+        tags: ["DL", "AI", "Optimization"]
+    },
+    {
+        name: "Structuring Machine Learning Projects",
+        logo: "images/certificates/dlai.png",
+        timeline: "2017",
+        url: "https://www.coursera.org/account/accomplishments/certificate/PCES899UGX2F",
+        summary: "Advanced training in structuring and optimizing machine learning projects. Covers project management, error analysis, and ML system optimization strategies.",
+        tags: ["ML", "AI", "Project Management"]
+    },
+    {
+        name: "Convolutional Neural Networks",
+        logo: "images/certificates/dlai.png",
+        timeline: "2018",
+        url: "https://www.coursera.org/account/accomplishments/certificate/SZ8MHCK5AQDH",
+        summary: "Comprehensive training in CNN architectures and computer vision applications. Covers advanced architectures including residual networks and practical applications in visual detection and recognition.",
+        tags: ["DL", "AI", "CV"]
+    },
+    {
+        name: "Sequence Models",
+        logo: "images/certificates/dlai.png",
+        timeline: "2018",
+        url: "https://www.coursera.org/account/accomplishments/certificate/ERZKTCFRULRF",
+        summary: "Advanced training in sequence modeling and natural language processing. Covers RNN architectures including GRUs and LSTMs, with applications in text and audio processing.",
+        tags: ["ML", "DL", "AI", "NLP"]
+    },
+    {
+        name: "Machine Learning",
+        logo: "images/certificates/stanford.png",
+        timeline: "2016",
+        url: "https://www.coursera.org/account/accomplishments/certificate/JKUC8RPKPWDE",
+        summary: "Foundational course in machine learning, data mining, and pattern recognition. Covers supervised and unsupervised learning algorithms with practical applications.",
+        tags: ["ML", "AI", "Data Mining"]
+    }
+];
+
+const categories = [
+    "All",
+    "AI",
+    "ML",
+    "DL",
+    "NLP",
+    "CV"
+];
+---
+
+<BaseLayout
+    title="Certifications | Pradipta Deb"
+    description="Professional certifications and specializations in AI, Machine Learning, and Healthcare"
+>
+    <div class="stack gap-20">
+        <main class="wrapper stack gap-8">
+            <Hero
+                title="Certifications"
+                tagline="Professional certifications and specializations in AI, Machine Learning, and Healthcare technologies."
+                align="start"
+            />
+            
+            <div class="filters">
+                {categories.map(category => (
+                    <button class="filter-btn" data-filter={category}>{category}</button>
+                ))}
+            </div>
+
+            <div class="certificates">
+                {certificates.map((cert) => <Certificate certificate={cert} />)}
+            </div>
+        </main>
+        <ContactCTA />
+    </div>
+</BaseLayout>
+
+<style>
+    .filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .filter-btn {
+        background-color: var(--gray-999);
+        border: 1px solid var(--gray-800);
+        color: var(--gray-300);
+        padding: 0.5rem 1rem;
+        border-radius: 1.5rem;
+        font-size: var(--text-sm);
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover {
+        background-color: var(--gray-800);
+        color: var(--gray-0);
+    }
+
+    .filter-btn.active {
+        background-color: var(--accent-regular);
+        border-color: var(--accent-regular);
+        color: var(--accent-text-over);
+    }
+
+    .certificates {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    @media (min-width: 50em) {
+        .certificates {
+            gap: 3rem;
+        }
+    }
+</style>
+
+<script>
+    // Add filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const certificates = document.querySelectorAll('.certificate');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.dataset.filter;
+            
+            // Update active button
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Filter certificates
+            if (filter === 'All') {
+                certificates.forEach(cert => cert.style.display = 'block');
+            } else {
+                certificates.forEach(cert => {
+                    const tags = Array.from(cert.querySelectorAll('.tag')).map(tag => tag.textContent);
+                    cert.style.display = tags.includes(filter) ? 'block' : 'none';
+                });
+            }
+        });
+    });
+</script> 

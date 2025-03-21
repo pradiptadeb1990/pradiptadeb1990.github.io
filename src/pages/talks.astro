@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Talk from '../components/Talk.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+
+const talks = [
+    {
+        title: "Large Scale Private Text Generation and Information Retrieval with LLMs",
+        summary: "Presented at M3AAWG 63rd General Meeting, Lisbon, Portugal (Feb 2025)"
+    },
+    {
+        title: "Mastering Large Language Models",
+        summary: "Presented at M3AAWG 61st General Meeting, Vienna, Austria (June 2024)"
+    },
+    {
+        title: "Demystifying Large Language Models Applied to Anti-Abuse",
+        summary: "Presented at M3AAWG 60th General Meeting, San Francisco, USA (Feb 2024). Blog post available at m3aawg.org"
+    }
+];
+---
+
+<BaseLayout
+    title="Talks & Tutorials | Pradipta Deb"
+    description="Conference presentations and tutorials on AI, Machine Learning, and Privacy-Preserving technologies"
+>
+    <div class="stack gap-20">
+        <main class="wrapper stack gap-8">
+            <Hero
+                title="Talks & Tutorials"
+                tagline="Sharing knowledge and insights about Large Language Models, Privacy-Preserving AI, and Anti-Abuse technologies."
+                align="start"
+            />
+            
+            <div class="talks">
+                {talks.map((talk) => <Talk talk={talk} />)}
+            </div>
+        </main>
+        <ContactCTA />
+    </div>
+</BaseLayout>
+
+<style>
+    .talks {
+        display: grid;
+        gap: 2rem;
+    }
+
+    @media (min-width: 50em) {
+        .talks {
+            gap: 3rem;
+        }
+    }
+</style> 

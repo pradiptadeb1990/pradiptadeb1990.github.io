@@ -1,0 +1,153 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Experience from '../components/Experience.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+
+const experiences = [
+    {
+        company: {
+            name: "M3AAWG",
+            url: "https://www.m3aawg.org/",
+            location: "Global",
+            overview: "The Messaging, Malware and Mobile Anti-Abuse Working Group (M3AAWG) is where the industry comes together to work against botnets, malware, spam, viruses, DoS attacks and other online exploitation.",
+            logo: "/assets/logos/m3aawg.png"
+        },
+        designation: "Vice Chair, Artificial Intelligence Committee",
+        start: "Aug 2024",
+        responsibilities: [
+            "Working with international group of 50+ orgs in developing AI/ML standards for cyber abuse prevention",
+            "Established framework for responsible LLM deployment in email security, adopted by major industry players",
+            "Coordinating cross-industry initiatives for secure and privacy-preserving AI in cybersecurity",
+            "Authored technical guidelines for large language model deployment in anti-abuse system",
+            "Provided talks and tutorial sessions regarding LLM and its safe uses"
+        ]
+    },
+    {
+        company: {
+            name: "Hornetsecurity",
+            url: "https://www.hornetsecurity.com/",
+            location: "Hem, France",
+            overview: "Hornetsecurity is a leading global provider of cloud security, compliance, backup, and security awareness, protecting over 6 billion mailboxes worldwide.",
+            logo: "/assets/logos/hornet.png"
+        },
+        designation: "Research Engineer",
+        start: "Aug 2022",
+        responsibilities: [
+            "Leading AI research initiatives for email security platform protecting 6B+ mailboxes globally",
+            "Developed and deployed LLM-based detection (>95% acc rate) for Business Email Compromise (BEC) attacks",
+            "Implemented fine-tuned language models for sophisticated threat detection (spam, phishing, impersonation)",
+            "Pioneered integration of Vision LLMs (Pixtral) for webpage scam detection, reducing false positives by 40%",
+            "Architected scalable ML pipeline processing billions of daily emails while maintaining GDPR compliance",
+            "Designed agent-based architecture for autonomous threat investigation and response",
+            "Mentored and established best practices for LLM deployment, monitoring in production"
+        ]
+    },
+    {
+        company: {
+            name: "Contract.Fit",
+            url: "https://www.contract.fit/",
+            location: "Brussels, Belgium",
+            overview: "Contract.Fit specializes in AI-powered document processing and information extraction solutions for enterprises.",
+            logo: "/assets/logos/contractFit.png"
+        },
+        designation: "Senior AI Engineer",
+        start: "May 2021",
+        end: "Jul 2022",
+        responsibilities: [
+            "Led development of transformer-based NLP systems for information extraction across 140+ document types",
+            "Developed computer vision solutions for detecting embedded objects in documents",
+            "Architected end-to-end ML pipeline processing 100K+ daily documents with 98% accuracy with automation",
+            "Served as Lead Developer and Tech Analyst for 4 major clients, bridging technical solutions with business requirements",
+            "Collaborated with sales/delivery teams to ensure smooth project deployment"
+        ]
+    },
+    {
+        company: {
+            name: "Team Magnet, INRIA",
+            url: "https://team.inria.fr/magnet/",
+            location: "Lille, France",
+            overview: "Magnet is a research team at INRIA Lille Nord Europe focusing on machine learning methods for mining information networks.",
+            logo: "/assets/logos/inria.png"
+        },
+        designation: "Research and Development Engineer",
+        start: "Sep 2019",
+        end: "Feb 2021",
+        responsibilities: [
+            "Developed collaborative computation platform for privacy-preserving statistical analysis using U-statistics",
+            "Implemented decentralized learning framework with differential privacy, reducing privacy budget by 45%",
+            "Created domain-specific language for privacy policy specification in collaboration with PhD researchers",
+            "Optimized homomorphic encryption for low-resource devices, reducing computation overhead by 60%"
+        ]
+    },
+    {
+        company: {
+            name: "MLT Lab, DFKI",
+            url: "https://www.dfki.de/en/web/research/research-departments/multilinguality-and-language-technology/",
+            location: "Germany",
+            overview: "The German Research Center for Artificial Intelligence (DFKI) is a leading research institution in innovative software technologies.",
+            logo: "/assets/logos/dfki.jpeg"
+        },
+        designation: "Research Assistant",
+        start: "Oct 2016",
+        end: "Dec 2018",
+        responsibilities: [
+            "Development of MaryTTS, improving voice quality by 40% through advanced neural synthesis techniques",
+            "Selected in Blizzard Challenge 2018 and participated in Blizzard 2017 for speech synthesis",
+            "Developed multi-speaker, multilingual speech synthesis system using deep learning for master thesis",
+            "Innovated hybrid approach for grapheme-to-phoneme conversion, achieving state-of-the-art accuracy in 5 languages",
+            "Created automated testing framework reducing development cycle time by 50%"
+        ]
+    },
+    {
+        company: {
+            name: "Tata Consultancy Services",
+            url: "https://www.tcs.com/",
+            location: "India",
+            overview: "Tata Consultancy Services is a global leader in IT services and consulting.",
+            logo: "/assets/logos/tcs.png"
+        },
+        designation: "Software Engineer",
+        start: "Jul 2012",
+        end: "Sep 2015",
+        responsibilities: [
+            "Developed and maintained enterprise applications for clients including Johnson & Johnson and ALCOA",
+            "Specialized in full-stack development using Java, C++, and Python technologies",
+            "Collaborated in cross-functional teams to deliver high-quality software solutions",
+            "Implemented automated testing frameworks improving code coverage by 40%"
+        ]
+    }
+];
+---
+
+<BaseLayout
+    title="Experience | Pradipta Deb"
+    description="Professional journey of Pradipta Deb - From Software Engineering to AI Research and Privacy-Preserving Machine Learning"
+>
+    <div class="stack gap-20">
+        <main class="wrapper stack gap-8">
+            <Hero
+                title="Professional Experience"
+                tagline="Experienced in LLM, NLP, AI, Machine Learning, and Privacy-Preserving technologies, from research to production systems."
+                align="start"
+            />
+            <div class="experiences">
+                {experiences.map((experience) => <Experience position={experience} />)}
+            </div>
+        </main>
+        <ContactCTA />
+    </div>
+</BaseLayout>
+
+<style>
+    .experiences {
+        display: grid;
+        gap: 3rem;
+    }
+
+    @media (min-width: 50em) {
+        .experiences {
+            gap: 4rem;
+        }
+    }
+</style> 

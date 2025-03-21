@@ -1,0 +1,96 @@
+---
+const { certificate } = Astro.props;
+---
+
+<div class="certificate">
+    <div class="header">
+        <div class="title-section">
+            <h3>{certificate.name}</h3>
+            <p class="timeline">{certificate.timeline}</p>
+        </div>
+        <a href={certificate.url} target="_blank" rel="noopener noreferrer" class="verify-btn">
+            Verify
+            <span class="icon">&rarr;</span>
+        </a>
+    </div>
+    <p class="summary">{certificate.summary}</p>
+    <div class="tags">
+        {certificate.tags.map((tag: string) => (
+            <span class="tag">{tag}</span>
+        ))}
+    </div>
+</div>
+
+<style>
+    .certificate {
+        padding: 2rem;
+        border: 1px solid var(--gray-800);
+        border-radius: 0.75rem;
+        background-color: var(--gray-999_40);
+        box-shadow: var(--shadow-sm);
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .certificate:hover {
+        transform: translateY(-3px);
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+    }
+
+    h3 {
+        color: var(--gray-0);
+        font-size: var(--text-lg);
+        margin: 0;
+    }
+
+    .timeline {
+        color: var(--accent-regular);
+        font-size: var(--text-sm);
+        margin: 0.5rem 0;
+    }
+
+    .verify-btn {
+        color: var(--accent-regular);
+        text-decoration: none;
+        font-size: var(--text-sm);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .verify-btn:hover {
+        color: var(--accent-dark);
+    }
+
+    .summary {
+        color: var(--gray-300);
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .tag {
+        background-color: var(--gray-800);
+        color: var(--gray-300);
+        padding: 0.3rem 0.8rem;
+        border-radius: 1.5rem;
+        font-size: var(--text-xs);
+    }
+
+    @media (max-width: 50em) {
+        .header {
+            flex-direction: column;
+            gap: 1rem;
+        }
+    }
+</style> 

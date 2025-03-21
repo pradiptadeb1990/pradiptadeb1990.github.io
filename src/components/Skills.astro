@@ -1,0 +1,82 @@
+---
+// import Icon from './Icon.astro';
+---
+
+<section class="box skills">
+	<div class="stack gap-2 lg:gap-4">
+		<!-- <Icon icon="brain" color="var(--accent-regular)" size="2.5rem" gradient /> -->
+		<h2>LLM-NLP Expertise</h2>
+		<p>Expert in Large Language Models (LLaMA, GPT, Mistral, Gemma, Phi, DeepSeek etc), Transformer Architectures, Traditional NLP, Document AI, and GraphML.</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<!-- <Icon icon="gear" color="var(--accent-regular)" size="2.5rem" gradient /> -->
+		<h2>ML & DL Expertise</h2>
+		<p>Specializing in Neural Networks, Computer Vision, Speech Processing, , Model Deployment, A/B Testing, Model Monitoring, MLOps, Distributed Training, and Performance Optimization.</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<!-- <Icon icon="shield" color="var(--accent-regular)" size="2.5rem" gradient /> -->
+		<h2>Privacy & Security</h2>
+		<p>Expert in Differential Privacy, Homomorphic Encryption, Federated Learning, GDPR Compliance, and Secure ML Pipeline Design.</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<!-- <Icon icon="code" color="var(--accent-regular)" size="2.5rem" gradient /> -->
+		<h2>ML Frameworks</h2>
+		<p>Proficient with PyTorch, TensorFlow, LlamaIndex, Ollama, VLLM, Hugging Face, Fastai, scikit-learn, and MLflow.</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<!-- <Icon icon="cloud" color="var(--accent-regular)" size="2.5rem" gradient /> -->
+		<h2>Cloud & Infrastructure</h2>
+		<p>Experience with Docker, Kubernetes, Gitlab & Github CI/CD, and Git.</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<!-- <Icon icon="database" color="var(--accent-regular)" size="2.5rem" gradient /> -->
+		<h2>Data Engineering</h2>
+		<p>Expert in Python, SQL, Pandas, NumPy, MongoDB, GraphDB, and Data Pipeline Design.</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<!-- <Icon icon="users" color="var(--accent-regular)" size="2.5rem" gradient /> -->
+		<h2>Leadership</h2>
+		<p>Skilled in Team Management, Technical Mentorship, Project Planning, Cross-functional Collaboration, and Research Direction.</p>
+	</div>
+</section>
+
+<style>
+	.box {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+		background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.skills {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+	}
+
+	.skills h2 {
+		font-size: var(--text-lg);
+	}
+
+	.skills p {
+		color: var(--gray-400);
+	}
+
+	@media (min-width: 50em) {
+		.box {
+			border-radius: 1.5rem;
+			padding: 2.5rem;
+		}
+
+		.skills {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 5rem;
+		}
+
+		.skills h2 {
+			font-size: var(--text-2xl);
+		}
+	}
+</style>
