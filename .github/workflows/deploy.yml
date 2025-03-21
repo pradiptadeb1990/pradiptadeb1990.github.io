@@ -30,7 +30,7 @@ jobs:
       - name: Clean install dependencies
         run: |
           rm -rf node_modules
-          npm clean-cache --force
+          npm cache clean --force
           npm install
 
       - name: Build site
